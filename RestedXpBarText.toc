@@ -1,0 +1,6 @@
+## Interface: 11200
+## Title: RestedXpBarText |cff7fff7f TurtleWOW|r
+## Version: 0.0.1
+## Author: Deceius
+## Notes: Displays rested XP Percentage
+core.lua
