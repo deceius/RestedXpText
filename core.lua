@@ -7,11 +7,18 @@ local function UpdateXPText()
 
     if max == 0 then return end
 
-    local text = string.format("XP %d / %d", curr, max)
+    local basePercent = (curr / max) * 100
+    local effectivePercent = math.min(((curr + rested) / max) * 100, 100)
+    local restedPercent = (rested / max) * 100
+
+    local text = string.format("XP %d / %d ",
+            curr, max, basePercent)
 
     if rested > 0 then
-        local restedPercent = (rested / max) * 100
-        text = text .. string.format(" (|cff0099ff%.1f%%|r)", restedPercent)
+        text = text .. string.format(
+            "(|cff0099ff%d remaining|r)",
+            rested
+        )
     end
 
     MainMenuBarExpText:SetText(text)
