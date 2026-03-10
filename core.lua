@@ -15,7 +15,6 @@ local function UpdateXPText()
     end
 
     MainMenuBarExpText:SetText(text)
-    MainMenuBarExpText:Show() 
 end
 
 local f = CreateFrame("Frame")
