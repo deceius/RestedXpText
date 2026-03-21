@@ -6,10 +6,11 @@ local function UpdateXPText()
 
     local curr = UnitXP("player")
     local max = UnitXPMax("player")
+    local expPercentage = (curr / max) * 100
     local rested = GetXPExhaustion() or 0
 
     if max == 0 then return end
-    local text = string.format("XP %d / %d | %.1f% ", curr, max, (curr / max) * 100)
+    local text = string.format("XP %d / %d - %.1f%% ", curr, max, expPercentage)
     if rested > 0 then
         local restedPercent = string.format("|cff0099ff%.1f%%|r", (rested / max) * 100) 
         local restedRemaining = string.format("|cff0099ff%d remaining|r", rested)
